@@ -2,11 +2,11 @@
 
 public class Person
 {
-    private string? Firstname { get; set; }
-    private string? Lastname { get; set; }
-    private int Age { get; set; }
-    private string Phone { get; set; }
-    private string Address { get; set; }
+    private string Firstname { get; init; }
+    private string Lastname { get; init; }
+    private int? Age { get; init; }
+    private string? Phone { get; init; }
+    private string? Address { get; init; }
     
     public Person(Builder builder)
     {
@@ -25,13 +25,13 @@ public override string ToString()
     
     public class Builder
     {
-        internal string? _firstname = null;
-        internal string? _lastname = null;
-        internal int _age;
-        internal string _address;
-        internal string _phone;
+        internal string _firstname;
+        internal string _lastname;
+        internal int? _age;
+        internal string? _address;
+        internal string? _phone;
 
-        public Builder(string? firstname, string? lastname)
+        public Builder(string firstname, string lastname)
         {
             _firstname = firstname;
             _lastname = lastname;
